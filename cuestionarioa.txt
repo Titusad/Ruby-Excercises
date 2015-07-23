@@ -1,0 +1,32 @@
+def hacer_pregunta pregunta
+ buenaRespuesta = false
+ 
+    while  (not buenaRespuesta)
+	puts pregunta
+	respuesta = gets.chomp.downcase
+	
+	if (respuesta == 'si' or respuesta == 'no')
+	 buenaRespuesta = true
+		
+		if respuesta == 'si'
+		  resultado = true 
+		else 
+ 		  resultado = false
+		end
+	else 
+	 puts 'Por favor, responde si o no'
+	end
+    end
+resultado
+end
+
+
+puts 'Holay gracias por participar en esta encuesta'
+puts
+
+hacer_pregunta 'Te gusta comer tacos?'
+hacer_pregunta 'Te gusta comer  burritos?'
+mojarLaCama = hacer_pregunta 'Aun mojas la cama?'
+hacer_pregunta 'Te gusta comer chimichangas?'
+puts 'Hemos descubierto que tu aun mojas la cama'
+

@@ -1,0 +1,8 @@
+anchoDeLinea	= 44
+capitulo 	= [' 1: Numeros',' 2: Letras', ' 3: Variables']
+paginas		= [' Pagina 1', ' Pagina 25', 'Pagina 75']	
+
+puts 'Tabla de contenidos'.upcase.center(anchoDeLinea)
+puts ('Capitulo' + capitulo[0]).ljust(anchoDeLinea /2) + paginas[0].rjust(anchoDeLinea /2)
+puts ('Capitulo' + capitulo[1]).ljust(anchoDeLinea /2) + paginas[1].rjust(anchoDeLinea /2)
+puts ('Capitulo' + capitulo[2]).ljust(anchoDeLinea /2) + paginas[2].rjust(anchoDeLinea /2)

@@ -1,0 +1,36 @@
+def duplicaEsto numero 
+ numeroPor2 = numero * 2
+ puts numero.to_s + ' al doble es ' +numeroPor2.to_s
+end
+
+duplicaEsto 34
+
+puts
+puts
+
+#Espacio
+#Espacio
+
+def pestecilla var 
+ var = nil
+ puts 'Pestecilla: Jajaja, he arruinado tu programa'
+end
+
+var = 'Programa: No, aqui  estoy aun'
+
+pestecilla var
+puts var 
+
+
+puts
+puts
+#Espacio
+#Espacio
+
+def muge numeroDeVeces
+ puts 'muu...' * numeroDeVeces
+ 'submarino amarillo'
+end
+
+x = muge 5
+puts x

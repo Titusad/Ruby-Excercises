@@ -1,0 +1,13 @@
+puts 'Hola, gracias por hacer parte de este experimento, te vamos a hacer unas preguntas'
+
+buenaRespuesta = false
+while (not buenaRespuesta)
+  puts 'Te gusta comer tacos?'
+   respuesta = gets.chomp.downcase
+ if (respuesta == 'si' or respuesta == 'no')
+  buenaRespuesta = true 
+ else
+  puts 'Por favor, responde si o no.'
+end
+end
+

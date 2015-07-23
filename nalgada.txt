@@ -1,0 +1,18 @@
+print "En que anho naciste?"
+anho = gets.chomp.to_s
+
+print "En que mes?"
+mes = gets.chomp.to_s
+
+print "En que dia naciste?"
+dia = gets.chomp.to_s
+
+
+nacimiento   = Time.mktime(anho, mes, dia)
+
+fecha_actual = Time.mktime(2015, 3, 3)
+
+nalgadas     = (fecha_actual - nacimiento).to_i.to_s
+
+
+puts 'Te has ganado '+nalgadas+' por todos tus cumpleanhos.'

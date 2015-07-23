@@ -1,0 +1,140 @@
+def numero_a_espanol numero
+	
+	#Solo queremos numeros del 0 al 100
+	if (numero < 0) or (numero > 100)
+		return 'Por favor, proporciona un numero entre 1 y 100'
+	end
+	
+	texto = '' #Esta es la cadena que retornaremos.
+	
+	#Casos especiales: cuando numero es 0 o 100, devolvemos el texto apropiado.
+	
+	if numero == 0
+		return 'cero'
+	end
+	if numero == 100
+		return 'cien'
+	end
+
+	# "restante" es lo que falta por escribir del numero.
+	# "actual" es la parte que vamos a escribir ahora.
+	# "restante" y "actual" esta claro?
+
+	restante 	= numero 
+	actual		= restante / 10
+	restante	= restante - actual * 10	
+	
+	if actual >  0
+		if actual == 1 # Grupo del 10 al 19
+			if restante < 7
+			#Como no podemos escribir "diez  y uno" en lugar
+			#de once, tenemos que establecer un comportamiento especial para
+			#este caso y similares.
+			
+				if restante 	== 0
+					texto 	= texto + 'diez'
+				elsif restante	== 1
+					texto 	= texto + 'once'
+				elsif restante	== 2
+					texto 	= texto + 'doce'
+				elsif restante	== 3
+					texto 	= texto + 'trece'
+				elsif restante	== 4
+					texto 	= texto + 'catorce'
+				elsif restante	== 5
+					texto 	= texto + 'quince'
+				elsif restante	== 6
+					texto 	= texto + 'dieciseis'
+				end
+			
+			# Decenas y unidades listas, no tenemos nada restante por escribir
+			restante = 0
+			
+			else	
+				#Los numeros mayores a 16 pueden escribirse de manera regular 
+				texto = texto + 'dieci'	
+			end
+
+		elsif actual == 2 # Grupo del 20 al 29
+			if restante  	== 0
+				texto	= texto + 'veinte'
+			elsif restante 	== 2 
+				texto 	= texto + 'veintidos'	
+				restante = 0
+			elsif restante 	== 3
+				texto 	= texto + 'veintitres'	
+				restante = 0
+			elsif restante 	== 6
+				texto 	= texto + 'veintiseis'	
+				restante = 0
+			else
+			#Los demas numeros del grupo se pueden escribir de forma regular
+				texto = texto + 'veinti'	
+			end
+		
+	else 	# Grupo del 30 al 99
+		# Todos estos numeros se pueden esccribir de forma regular:
+		# decenas + 'y ' + unidades
+
+	 if 	actual == 3
+		texto = texto + 'treinta' 
+	 elsif 	actual == 4
+		texto = texto + 'cuarenta'
+	 elsif 	actual == 5
+		texto = texto + 'cincuenta'
+	 elsif 	actual == 6
+		texto = texto + 'sesenta'	
+	 elsif 	actual == 7
+		texto = texto + 'setenta'
+	 elsif 	actual == 8
+		texto = texto + 'ochenta'
+	 elsif 	actual == 9
+		texto = texto + 'noventa'
+	 end
+
+	 if restante >  0
+		texto = texto + ' y '	
+	 end
+      end
+   end
+
+	actual 		= restante #Cuantas unidades quedan por escribir?
+	restante 	= 0
+	
+	if actual > 0 
+	  if	actual == 1
+	  	texto = texto + 'uno'
+	  elsif	actual == 2
+	  	texto = texto + 'dos'
+	  elsif	actual == 3
+	  	texto = texto + 'tres'
+	  elsif	actual == 4
+	  	texto = texto + 'cuatro'
+	  elsif	actual == 5
+	  	texto = texto + 'cinco'
+	  elsif	actual == 6
+	  	texto = texto + 'seis'
+	  elsif	actual == 7
+	  	texto = texto + 'siete'
+	  elsif	actual == 8
+	  	texto = texto + 'ocho'
+	  elsif	actual == 9
+	  	texto = texto + 'nueve'
+	  end
+	end
+   texto
+end
+
+
+puts numero_a_espanol 89
+puts numero_a_espanol 76
+puts numero_a_espanol 43
+puts numero_a_espanol 33
+puts numero_a_espanol 25
+
+
+
+
+
+
+
